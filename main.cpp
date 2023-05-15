@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+
 template <typename T>
 class Matrix {
 private:
@@ -242,7 +243,7 @@ public:
             for (int j = 0; j < matr.Getcols();++j){
                 os << matr.Getdata()[i][j] << " ";
             }
-            os << "\n";
+            os << std::endl;
         }
         return os;
     }
@@ -272,18 +273,18 @@ int main() {
     }
 
 
-    Matrix<int> matr2(2,2,data2);
-    Matrix<int> matr3(2,2,data3);
-    std::cout <<"matr2 = " << "\n" <<  matr2 << std::endl;// '<<' demonstration
-    std::cout <<"matr3 = " << "\n" <<  matr3 << std::endl;// '<<' demonstration
-    Matrix<int> e = matr2;
+    Matrix<int> matr1(2, 2, data2);
+    Matrix<int> matr2(2, 2, data3);
+    std::cout << "matr1 = " << "\n" << matr1 << std::endl;// '<<' demonstration
+    std::cout << "matr2 = " << "\n" << matr2 << std::endl;// '<<' demonstration
+    Matrix<int> e = matr1;
     std::cout <<"e = " << "\n" <<  e << std::endl;    // ' = ' demonstration
-    std::cout <<"matr2 == matr3 (0 - no, 1 - yes) -> " <<  (matr2 == matr3) << std::endl;
-    std::cout <<"matr2 == e (0 - no, 1 - yes) -> " <<  (matr2 == e) << std::endl; // '==' demonstration
-    std::cout <<"matr3*matr2 = " << "\n" <<  matr3*matr2 << std::endl;// '*' demonstration
-    std::cout <<"matr3+matr2 = " << "\n" <<  matr3+matr2 << std::endl;// '+' demonstration
-    std::cout <<"matr3-matr2 = " << "\n" <<  matr3-matr2 << std::endl; // '-' demonstration
-    std::cout <<"matr3 * 5 =  " << "\n" <<  matr3*5 << std::endl;   // '* scalar' demonstration
+    std::cout << "matr1 == matr2 (0 - no, 1 - yes) -> " << (matr1 == matr2) << std::endl;
+    std::cout << "matr1 == e (0 - no, 1 - yes) -> " << (matr1 == e) << std::endl; // '==' demonstration
+    std::cout << "matr2*matr1 = " << "\n" << matr2 * matr1 << std::endl;// '*' demonstration
+    std::cout << "matr2+matr1 = " << "\n" << matr2 + matr1 << std::endl;// '+' demonstration
+    std::cout << "matr2-matr1 = " << "\n" << matr2 - matr1 << std::endl; // '-' demonstration
+    std::cout << "matr2 * 5 =  " << "\n" << matr2 * 5 << std::endl;   // '* scalar' demonstration
     std::cout <<"Zero 3x3 matrix = \n" <<  Matrix<int>::ZeroCr(3,3) << std::endl; // ' zero matrix ' demonstration
     std::cout <<"The unit 3x3 matrix = \n" <<  Matrix<int>::UnitCr(3,3) << std::endl; // ' unit matrix ' demonstration
 }
